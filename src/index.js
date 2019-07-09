@@ -3,14 +3,26 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import rootReducers from "./store/reducers/rootReducers";
 // untuk binding redux kedalam reactjs
 import { Provider } from "react-redux";
 // menambahkan thunk sebagai middleware
 import thunk from "redux-thunk";
+// menghubungkan react-firebase dan redux-firestore untuk mengakses API mereka
+import { reduxFirestore, getFirestore } from "redux-firestore";
+import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
+// import file konfigurasi dari firebase
+import fbconfig from "./config/firebase";
 
-const store = createStore(rootReducers, applyMiddleware(thunk));
+const store = createStore(
+  rootReducers,
+  compose(
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    reduxFirestore(fbconfig),
+    reactReduxFirebase(fbconfig)
+  )
+);
 
 ReactDOM.render(
   <Provider store={store}>
