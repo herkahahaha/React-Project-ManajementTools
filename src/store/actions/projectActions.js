@@ -2,7 +2,9 @@ export const createProject = project => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     // asny call to database
     const firestore = getFirestore();
-    //ingat nama project yang kita miliki dikonsol firebase
+    //ingat nama project yang kita miliki dikonsol firebase disini "projects" yg saya gunakan
+    // ini kerangka awal input data kedalam projek firebase kita
+    // .then dan .catch merupakan fungsi callback
     firestore
       .collection("projects")
       .add({

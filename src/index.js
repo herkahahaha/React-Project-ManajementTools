@@ -12,7 +12,7 @@ import thunk from "redux-thunk";
 // menghubungkan react-firebase dan redux-firestore untuk mengakses API mereka
 import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
-// import file konfigurasi dari firebase
+// import file konfigurasi dari firebase lalu parsing kedalam reduxFirestore() dan reactReduxFirebase(), penambahan compose sebagai fungsi penggabung getFirebase dan getFirestore
 import fbconfig from "./config/firebase";
 
 const store = createStore(
