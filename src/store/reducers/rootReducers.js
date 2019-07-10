@@ -2,7 +2,7 @@ import authReducers from "./authReducers";
 import projectReducers from "./projectReducers";
 // bawaan redux
 import { combineReducers } from "redux";
-// mengsynkronkan firestore
+// mengsynkronkan untuk mengakses firestore
 import { firestoreReducer } from "redux-firestore";
 
 const rootReducers = combineReducers({
