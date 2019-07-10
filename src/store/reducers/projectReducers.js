@@ -2,7 +2,7 @@ const initState = {
   projects: [
     { id: "1", title: "Cara bikin web", content: "auooooaoaooaoooaoaoaoa" },
     { id: "2", title: "Cara bikin anak", content: "auooooaoaooaoooaoaoaoa" },
-    { id: "3", title: "Cara bikin kue", content: "auooooaoaooaoooaoaoaoa" }
+    { id: "3", title: "Cara bikin kueh", content: "auooooaoaooaoooaoaoaoa" }
   ]
 };
 
