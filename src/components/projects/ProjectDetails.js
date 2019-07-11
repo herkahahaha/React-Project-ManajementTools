@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
+// untuk menampilkan waktu
+import moment from "moment";
 
 const ProjectDetails = props => {
   const { project, auth } = props;
@@ -19,7 +21,7 @@ const ProjectDetails = props => {
           </div>
           <div className="card-action gret lighten-4 grey-text">
             <div>{project.authorFirstName}</div>
-            <div>6th July, 8am</div>
+            <div>{moment(project.createdAt.toDate()).calendar()}</div>
           </div>
         </div>
       </div>

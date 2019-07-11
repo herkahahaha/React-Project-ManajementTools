@@ -17,6 +17,8 @@ class CreateProject extends Component {
     e.preventDefault();
     // console.log(this.state);
     this.props.createProject(this.state);
+    // cara meredirect ke halaman utama setelah posting
+    this.props.history.push("/");
   };
   render() {
     // mengamankan hak akses autentifikasi

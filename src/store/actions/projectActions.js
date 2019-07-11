@@ -5,13 +5,15 @@ export const createProject = project => {
     //ingat nama project yang kita miliki dikonsol firebase disini "projects" yg saya gunakan
     // ini kerangka awal input data kedalam projek firebase kita
     // .then dan .catch merupakan fungsi callback
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
     firestore
       .collection("projects")
       .add({
         ...project,
-        authorFirstName: "herka",
-        authorLastName: "hahaha",
-        authorId: 1212121,
+        authorFirstName: profile.firstName,
+        authorLastName: profile.lastName,
+        authorId: authorId,
         createdAt: new Date()
       })
       .then(() => {
