@@ -16,7 +16,7 @@ const SignInLinks = props => {
       </li>
       <li>
         <NavLink to="/" className="btn btn-floating red lighten-1">
-          HH
+          {props.profile.initial}
         </NavLink>
       </li>
     </ul>
