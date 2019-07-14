@@ -26,3 +26,21 @@ exports.projectCreated = functions.firestore
     };
     return createNotifications(notification);
   });
+
+// informasi user yg update
+exports.userJoined = functions.auth.user().onCreate(user => {
+  return admin
+    .firestore()
+    .collection("users")
+    .doc(user.uid)
+    .get()
+    .then(doc => {
+      const newUser = doc.data();
+      const notification = {
+        content: "joined the party",
+        user: `${newUser.firstName} ${newUser.lastName}`,
+        time: admin.firestore.FieldValue.serverTimestamp()
+      };
+      return createNotifications(notification);
+    });
+});
