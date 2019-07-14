@@ -1,7 +1,7 @@
+// untuk signin
 export const signIn = credential => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
-
     firebase
       .auth()
       .signInWithEmailAndPassword(credential.email, credential.password)
@@ -14,6 +14,7 @@ export const signIn = credential => {
   };
 };
 
+// untuk logout
 export const signOut = () => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
@@ -26,6 +27,7 @@ export const signOut = () => {
   };
 };
 
+// untun ngedaftar
 export const signUp = newUser => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firebase = getFirebase();

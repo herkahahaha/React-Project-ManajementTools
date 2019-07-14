@@ -6,6 +6,7 @@ import { signOut } from "../../store/actions/authActions";
 
 const SignInLinks = props => {
   return (
+    // template jsx
     <ul className="right">
       <li>
         <NavLink to="/create">New Project</NavLink>

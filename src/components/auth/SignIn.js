@@ -45,7 +45,7 @@ class SignIn extends Component {
   }
 }
 
-// catch error dari autentifikasi
+// catch error dan autentifikasi
 const mapStateToProps = state => {
   return {
     authError: state.auth.authError,
