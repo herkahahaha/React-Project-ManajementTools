@@ -27,7 +27,7 @@ exports.projectCreated = functions.firestore
     return createNotifications(notification);
   });
 
-// informasi user yg update
+// informasi user yg update pada database firebase
 exports.userJoined = functions.auth.user().onCreate(user => {
   return admin
     .firestore()
