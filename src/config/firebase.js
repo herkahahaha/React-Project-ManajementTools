@@ -4,13 +4,12 @@ import "firebase/auth";
 
 // initialize firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyB4ibbA3wNpbTH4uiT55BXk-M3xk9RyhBA",
-  authDomain: "react-haha-isekai.firebaseapp.com",
-  databaseURL: "https://react-haha-isekai.firebaseio.com",
-  projectId: "react-haha-isekai",
+  apiKey: "YOUR API KEY",
+  authDomain: "YOUR AUTH DOMAIN",
+  databaseURL: "YOUR DATABASE URL",
+  projectId: "YOUR PROJECTID",
   storageBucket: "",
-  messagingSenderId: "751519913553",
-  appId: "1:751519913553:web:f75fc959302d6a39"
+  // take this data from your firebase console
 };
 
 firebase.initializeApp(firebaseConfig);
